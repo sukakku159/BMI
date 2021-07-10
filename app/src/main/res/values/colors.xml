@@ -10,7 +10,8 @@
     <color name="background_purple">#0B0E22</color>
     <color name="background_card1">#1E1E34</color>
     <color name="background_card2">#13122A</color>
-
+    <color name="text_gray">#808191</color>
+    <dimen name="text_size1">24sp</dimen>
 
 
 
