@@ -8,10 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_purple">#0B0E22</color>
+    <color name="background_card_chosen">#13122A</color>
     <color name="background_card1">#1E1E34</color>
     <color name="background_card2">#13122A</color>
     <color name="text_gray">#808191</color>
-    <dimen name="text_size1">24sp</dimen>
+    <color name="thumb_color">#F64237</color>
+    <color name="btn_rounded_color">#4E4F60</color>
+    <color name="pink">#EB1555</color>
+
 
 
 
