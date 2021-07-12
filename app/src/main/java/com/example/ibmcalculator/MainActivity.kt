@@ -1,4 +1,6 @@
-package com.example.ibmcalculator
+import com.example.ibmcalculator.R
+
++package com.example.ibmcalculator
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnAgeMinus: Button
     private lateinit var valWeight : TextView
     private lateinit var valAge : TextView
+    private lateinit var btnCalculate : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -45,9 +48,21 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
+        var valueWeight = valWeight.text.toString().toInt()
+        var valueAge = valAge.text.toString().toInt()
         btnWeightPlus.setOnClickListener() {
-            valWeight.text.toString().toInt() ++
+           valueWeight ++
         }
+        btnWeightMinus.setOnClickListener() {
+            valueWeight --
+        }
+        btnAgePlus.setOnClickListener() {
+            valueAge ++
+        }
+        btnAgeMinus.setOnClickListener() {
+            valueAge --
+        }
+
 
 
         }
@@ -65,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         btnWeightPlus = findViewById(R.id.btn_weight_plus)
         valWeight = findViewById(R.id.text_weight)
         valAge = findViewById(R.id.text_age)
+        btnCalculate = findViewById(R.id.btn_calculate)
 
     }
 }
