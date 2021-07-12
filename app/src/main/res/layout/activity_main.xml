@@ -167,18 +167,19 @@
                 android:text="WEIGHT"
                 android:textSize="@dimen/text_size1"
                 android:textColor="@color/text_gray"
-                android:id="@+id/ic_male"/>
+                android:id="@+id/text_weight"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/ic_male"
+                app:layout_constraintTop_toBottomOf="@id/text_weight"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:text="40"
                 android:textColor="@color/white"
                 android:textSize="52sp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textAllCaps="true"
+                android:id="@+id/val_weight"/>
             <ImageButton
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -186,12 +187,12 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintVertical_bias="0.85"
                 app:layout_constraintHorizontal_bias="0.25"
-                android:background="@drawable/btn_rounded"
+                android:background="@drawable/circular_button"
                 android:src="@drawable/ic_plus"
                 android:tint="@color/white"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:id="@+id/btn_plus"
+                android:id="@+id/btn_weight_plus"
                  />
             <ImageButton
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -200,12 +201,12 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintVertical_bias="0.85"
                 app:layout_constraintHorizontal_bias="0.75"
-                android:background="@drawable/btn_rounded"
+                android:background="@drawable/circular_button"
                 android:src="@drawable/ic_minus"
                 android:tint="@color/white"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:id="@+id/btn_plus"
+                android:id="@+id/btn_weight_minus"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -225,11 +226,11 @@
                 android:text="AGE"
                 android:textSize="@dimen/text_size1"
                 android:textColor="@color/text_gray"
-                android:id="@+id/ic_male"/>
+                android:id="@+id/text_age"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/ic_male"
+                app:layout_constraintTop_toBottomOf="@id/text_age"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:text="20"
@@ -244,13 +245,12 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintVertical_bias="0.85"
                 app:layout_constraintHorizontal_bias="0.25"
-                android:background="@drawable/btn_rounded"
+                android:background="@drawable/circular_button"
                 android:src="@drawable/ic_plus"
-                android:tint="@color/white"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:id="@+id/btn_plus"
-                />
+                android:id="@+id/btn_age_plus"
+                app:tint="@color/white" />
             <ImageButton
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -258,13 +258,12 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintVertical_bias="0.85"
                 app:layout_constraintHorizontal_bias="0.75"
-                android:background="@drawable/btn_rounded"
+                android:background="@drawable/circular_button"
                 android:src="@drawable/ic_minus"
-                android:tint="@color/white"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:id="@+id/btn_plus"
-                />
+                android:id="@+id/btn_age_minus"
+                app:tint="@color/white" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
     <Button
@@ -273,7 +272,7 @@
         android:layout_weight="11"
         android:background="@drawable/btn_calculate"
         android:text="CALCULATE"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:layout_marginHorizontal="8dp"/>
 
 </LinearLayout>
