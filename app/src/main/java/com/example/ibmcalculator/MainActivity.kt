@@ -1,17 +1,13 @@
-import com.example.ibmcalculator.R
+package com.example.ibmcalculator
 
-+package com.example.ibmcalculator
 
-import android.graphics.Color
+import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.SeekBar
-import android.widget.TextView
+import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
-import java.util.stream.Collectors.mapping
-import kotlin.math.log
+import java.text.Format
 import android.widget.SeekBar.OnSeekBarChangeListener as OnSeekBarChangeListener1
 
 class MainActivity : AppCompatActivity() {
@@ -19,17 +15,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnFemale : ConstraintLayout
     private lateinit var skBar: SeekBar
     private lateinit var txVolume : TextView
-    private lateinit var btnWeightPlus: Button
-    private lateinit var btnWeightMinus: Button
-    private lateinit var btnAgePlus: Button
-    private lateinit var btnAgeMinus: Button
+    private lateinit var btnWeightPlus: ImageButton
+    private lateinit var btnWeightMinus: ImageButton
+    private lateinit var btnAgePlus: ImageButton
+    private lateinit var btnAgeMinus: ImageButton
     private lateinit var valWeight : TextView
     private lateinit var valAge : TextView
     private lateinit var btnCalculate : Button
+    private lateinit var testbmi : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mapping()
+
+        valWeight
         btnMale.setOnClickListener() {
             btnMale.isSelected = true
             btnFemale.isSelected = false
@@ -48,19 +47,43 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
-        var valueWeight = valWeight.text.toString().toInt()
-        var valueAge = valAge.text.toString().toInt()
+
+
+
+        val valueHeight = txVolume.text.toString().toFloat()
+        var valueWeight = valWeight.text.toString().toFloat()
+        var valueAge = valAge.text.toString().toFloat()
+        txVolume.setOnClickListener() {
+            Toast.makeText(this, "${txVolume.text}", Toast.LENGTH_SHORT).show()
+        }
+        valWeight.setOnClickListener() {
+            Toast.makeText(this, "${valWeight.text}", Toast.LENGTH_SHORT).show()
+        }
+        valAge.setOnClickListener() {
+            Toast.makeText(this, "${valAge.text}", Toast.LENGTH_SHORT).show()
+        }
         btnWeightPlus.setOnClickListener() {
            valueWeight ++
+           valWeight.text = valueWeight.toInt().toString()
         }
         btnWeightMinus.setOnClickListener() {
             valueWeight --
+            valWeight.text = valueWeight.toInt().toString()
         }
         btnAgePlus.setOnClickListener() {
             valueAge ++
+            valAge.text = valueAge.toInt().toString()
         }
         btnAgeMinus.setOnClickListener() {
             valueAge --
+            valAge.text = valueAge.toInt().toString()
+        }
+
+        btnCalculate.setOnClickListener() {
+            val i = Intent(this, activity_result :: class.java)
+            val BMI= "%.1f".format(valueWeight/((valueHeight/100) * (valueHeight/100)))
+            i.putExtra("data", BMI.toString())
+            startActivity(i)
         }
 
 
@@ -70,17 +93,19 @@ class MainActivity : AppCompatActivity() {
 
 
         private fun mapping() {
-        btnMale = findViewById(R.id.male)
-        btnFemale = findViewById(R.id.female)
-        skBar = findViewById(R.id.seek_bar)
-        txVolume = findViewById(R.id.text_volume)
-        btnAgeMinus = findViewById(R.id.btn_age_minus)
-        btnAgePlus = findViewById(R.id.btn_age_plus)
-        btnWeightMinus = findViewById(R.id.btn_weight_minus)
-        btnWeightPlus = findViewById(R.id.btn_weight_plus)
-        valWeight = findViewById(R.id.text_weight)
-        valAge = findViewById(R.id.text_age)
-        btnCalculate = findViewById(R.id.btn_calculate)
+            btnMale = findViewById(R.id.male)
+            btnFemale = findViewById(R.id.female)
+            skBar = findViewById(R.id.seek_bar)
+            txVolume = findViewById(R.id.text_volume)
+            btnAgeMinus = findViewById(R.id.btn_age_minus)
+            btnAgePlus = findViewById(R.id.btn_age_plus)
+            btnWeightMinus = findViewById(R.id.btn_weight_minus)
+            btnWeightPlus = findViewById(R.id.btn_weight_plus)
+            valWeight = findViewById(R.id.val_weight)
+            valAge = findViewById(R.id.val_age)
+            btnCalculate = findViewById(R.id.btn_calculate)
+            testbmi = findViewById(R.id.test_bmi)
+        }
 
-    }
+
 }

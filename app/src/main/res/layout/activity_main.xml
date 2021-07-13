@@ -16,7 +16,8 @@
         android:gravity="center"
         android:text="BMI Calculator"
         android:textColor="@color/white"
-        android:textSize="22sp"/>
+        android:textSize="22sp"
+        android:id="@+id/test_bmi"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -228,6 +229,7 @@
                 android:textColor="@color/text_gray"
                 android:id="@+id/text_age"/>
             <TextView
+                android:id="@+id/val_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/text_age"
@@ -274,6 +276,6 @@
         android:background="@drawable/btn_calculate"
         android:text="CALCULATE"
         android:textSize="24sp"
-        android:layout_marginHorizontal="8dp"/>
+        android:layout_marginHorizontal="12dp"/>
 
 </LinearLayout>
